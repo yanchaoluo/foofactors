@@ -1,0 +1,22 @@
+Package: foofactors
+Title: Make Factors Less Annoying
+Version: 0.0.0.9000
+Authors@R: person("Yanchao", "Luo", role=c("aut", "cre"),
+    email = "yanchao.luo@stat.ubc.ca")
+Description: This is a packages, which we can find some new function such as fbind(), order_appeared(), reorder_new(),etc.
+    Factors have driven people to extreme measures, like ordering
+    custom conference ribbons and laptop stickers to express how HELLNO we
+    feel about stringsAsFactors. And yet, sometimes you need them. Can they
+    be made less maddening? Let's find out.
+Depends:
+    R (>= 3.2.2)
+License: MIT + file LICENSE
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+Imports: dplyr
+VignetteBuilder: knitr
+
