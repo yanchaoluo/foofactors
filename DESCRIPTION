@@ -13,10 +13,9 @@ Depends:
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 6.0.1
-Suggests: 
+Suggests:
     testthat,
     knitr,
     rmarkdown
-Imports: dplyr
 VignetteBuilder: knitr
-
+Imports: dplyr
