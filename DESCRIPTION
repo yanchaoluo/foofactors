@@ -7,7 +7,7 @@ Description: This is a packages, which we can find some new function such as fbi
     Factors have driven people to extreme measures, like ordering
     custom conference ribbons and laptop stickers to express how HELLNO we
     feel about stringsAsFactors. And yet, sometimes you need them. Can they
-    be made less maddening? Let's find out.
+    be made less maddening? Let's find out. This packages is similar with forcats packages
 Depends:
     R (>= 3.2.2)
 License: MIT + file LICENSE
