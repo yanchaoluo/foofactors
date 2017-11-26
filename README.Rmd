@@ -4,61 +4,124 @@ output:
     variant: markdown_github
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
-
 **NOTE: This is a toy package created for expository purposes. It is not meant to actually be useful. If you want a package for factor handling, please see [forcats](https://cran.r-project.org/package=forcats).**
 
-### foofactors
+## foofactors
 
 Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
 
-### Installation
+Description: This is a packages, which we can find some new function
+    such as fbind(),order_appeared(), reorder_new(),etc.
+    Factors have driven people to extreme measures, like ordering
+    custom conference ribbons and laptop stickers to express how HELLNO we
+    feel about stringsAsFactors. And yet, sometimes you need them. Can they
+    be made less maddening? Let's find out. This packages is similar with forcats packages.
+*Rscripts for functions are in R folder*
+*Tests for functions are in the test folder*
 
-```{r installation, eval = FALSE}
-devtools::install_github("jennybc/foofactors")
-```
-  
-### Quick demo
-
-Binding two factors via `fbind()`:
+## Installation
 
 ```{r}
+# install.packages("devtools")
+library(devtools)
+devtools::install_github("yanchaoluo/foofactors")
 library(foofactors)
-a <- factor(c("character", "hits", "your", "eyeballs"))
-b <- factor(c("but", "integer", "where it", "counts"))
 ```
 
-Simply catenating two factors leads to a result that most don't expect.
+The `foofactors` package has five functions:
+
++ `fbind`: Create a new factor from two existing factors, where the new factor's levels are the union of the levels of the input factors.
+
++ `freq_out`: Make a frequency table for a factor.
+
++ `order_appeared`: Set levels of a factor to the order appeared in data.
+
++ `reorder_new`: Reorder levels in descending order.
+
++ `detect_factor_be_character`: Detect factors be character or not.
+
+### Binding two factors using `fbind()`:
+
+The `fbind` function puts two factors together as one.
 
 ```{r}
-c(a, b)
+factor1<- factor(c("This", "is", "test", "for"))
+factor2 <- factor(c("how", "to", "use", "fbind","function"))
 ```
 
-The `fbind()` function glues two factors together and returns factor.
+If we only use `c` function, which we can not get the expected result.
 
 ```{r}
-fbind(a, b)
+c(factor1, factor2)
 ```
 
-Often we want a table of frequencies for the levels of a factor. The base `table()` function returns an object of class `table`, which can be inconvenient for downstream work. Processing with `as.data.frame()` can be helpful but it's a bit clunky.
+Using `fbind()` function.
 
 ```{r}
-set.seed(1234)
-x <- factor(sample(letters[1:5], size = 100, replace = TRUE))
-table(x)
-as.data.frame(table(x))
+fbind(factor1, factor2)
 ```
 
-The `freq_out()` function returns a frequency table as a well-named `tbl_df`:
+### Make a frequency table for a factor: `freq_out()`
+
+The `freq_out` gives a dataframe with factors and their frequency.
+
+If we could use `as.data.frame` function.
+```{r}
+set.seed(1)
+sample_letters <- factor(sample(letters[1:4], size = 100, replace = TRUE))
+as.data.frame(table(sample_letters))
+```
+
+The `freq_out()` function is much easy to make the frequency table.
 
 ```{r}
-freq_out(x)
+freq_out(sample_letters)
 ```
+
+### Detect factors that should be character: `detect_factor_be_character`
+
+It's hard to figure out factor and character in R, for example:
+```{r}
+factor1<- class(factor(c("apple", "pear", "banana")))
+factor2<- class(factor(c("apple", "pear", "apple")))
+```
+
+From above code, both "factor1" and "factor2" are defined as the factor. However, "factor1" should be a character because of the number of unique value equal to the length. 
+
+Using `detect_factor_be_character` function can easily find "character", "factor" and neither "character" or "factor."
+
+```{r}
+factor1 <- factor(c("apple", "pear", "banana"))
+detect_factor_be_character(factor1)
+```
+
+```
+factor2 <-  factor(c("apple", "pear", "apple"))
+factor3<- c(1,2,2,3)
+detect_factor_be_character(factor2)
+detect_factor_be_character(factor3) 
+```
+The R code above will show two types of error when you use "detect_factor_be_character."
+
+### Reorder level of factor: 
+
+This function is very similar with `fct_rev` function.
+and `reorder_new` fuction is using desc() in dplyr to reorder factor levels in descending order.
+
+```{r}
+reorder_new(factor(c("1","2","3")))
+```
+
+From the code above, we could find that the orginal order levels is 1, 2, 3. Using the `reorder_new` function we get decending order 3, 2, 1.
+
+### Sets levels to the order in which they appear in the data: order_appeared
+
+Here I create a function which set the order following appearance level. and this function will only return unique input levels,
+
+```{r}
+factor(c("pear","apple","banana","banana","apple"))
+order_appeared (c("pear","apple","banana","banana","apple"))
+```
+
+If we only use `factor`function, the factor level will follow the alphabet. Using `order_appeared` function, the factor level will order in which they appear in the data.
+
