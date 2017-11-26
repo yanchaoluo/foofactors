@@ -8,7 +8,7 @@
 #' reorder_new(factor(c("1","2","3")))
 #' @export
 reorder_new <- function(x) {
-  result<-reorder(x, dplyr::desc(x))
+  result<-stats::reorder(x, dplyr::desc(x))
   return(result)
 }
 

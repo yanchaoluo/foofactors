@@ -28,7 +28,7 @@ The goal of `foofactor` is to practice and develop an R package. The `foofactors
 
 ```{r}
 # install.packages("devtools")
-devtools::install_github("yanchaoluo/foofactors")
+devtools::install_github("yanchaoluo/foofactors",build_vignettes = TRUE)
 library(foofactors)
 ```
 
