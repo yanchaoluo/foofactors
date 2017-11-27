@@ -5,7 +5,11 @@ foofactors
 
 Factors are a handy type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
 
-Description: This is a package, which we can find some new function such as fbind(),order\_appeared(), reorder\_new(),etc. Factors have driven people to extreme measures, like ordering custom conference ribbons and laptop stickers to express how HELLNO we feel about stringsAsFactors. And yet, sometimes you need them. Can they be made less maddening? Let's find out. This package is similar to forcats package, and you could find more factor function in forcats. *Rscripts for functions are in R folder* *Tests for functions are in the test folder*
+Description: This is a package, which we can find some new function such as fbind(),order\_appeared(), reorder\_new(),etc. Factors have driven people to extreme measures, like ordering custom conference ribbons and laptop stickers to express how HELLNO we feel about stringsAsFactors. And yet, sometimes you need them. Can they be made less maddening? Let's find out. This package is similar to forcats package, and you could find more factor function in forcats.
+
+*Rscripts for functions are in R folder*
+
+*Tests for functions are in the test folder*
 
 Installation
 ------------
@@ -32,7 +36,7 @@ devtools::install_github("yanchaoluo/foofactors")
 
     ## "D:/R/R-34~1.1/bin/x64/R" --no-site-file --no-environ --no-save  \
     ##   --no-restore --quiet CMD INSTALL  \
-    ##   "C:/Users/dluo/AppData/Local/Temp/RtmpMXGame/devtools3f84254170db/yanchaoluo-foofactors-a4a99ff"  \
+    ##   "C:/Users/dluo/AppData/Local/Temp/RtmpYHruwZ/devtools13546a4f4365/yanchaoluo-foofactors-0a66f5a"  \
     ##   --library="D:/R/R-3.4.1/library" --install-tests
 
     ## 
