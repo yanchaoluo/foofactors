@@ -3,9 +3,9 @@
 foofactors
 ----------
 
-Factors are a very useful type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
+Factors are a handy type of variable in R, but they can also drive you nuts. This package provides some helper functions for the care and feeding of factors.
 
-Description: This is a packages, which we can find some new function such as fbind(),order\_appeared(), reorder\_new(),etc. Factors have driven people to extreme measures, like ordering custom conference ribbons and laptop stickers to express how HELLNO we feel about stringsAsFactors. And yet, sometimes you need them. Can they be made less maddening? Let's find out. This packages is similar with forcats packages. *Rscripts for functions are in R folder* *Tests for functions are in the test folder*
+Description: This is a package, which we can find some new function such as fbind(),order\_appeared(), reorder\_new(),etc. Factors have driven people to extreme measures, like ordering custom conference ribbons and laptop stickers to express how HELLNO we feel about stringsAsFactors. And yet, sometimes you need them. Can they be made less maddening? Let's find out. This package is similar to forcats package, and you could find more factor function in forcats. *Rscripts for functions are in R folder* *Tests for functions are in the test folder*
 
 Installation
 ------------
@@ -26,9 +26,13 @@ devtools::install_github("yanchaoluo/foofactors")
 
     ## Installing foofactors
 
+    ## Installing 1 package: devtools
+
+    ## Warning: package 'devtools' is in use and will not be installed
+
     ## "D:/R/R-34~1.1/bin/x64/R" --no-site-file --no-environ --no-save  \
     ##   --no-restore --quiet CMD INSTALL  \
-    ##   "C:/Users/dluo/AppData/Local/Temp/RtmpqGPkgW/devtools1d0432f2a0d/yanchaoluo-foofactors-800abf0"  \
+    ##   "C:/Users/dluo/AppData/Local/Temp/RtmpMXGame/devtools3f84254170db/yanchaoluo-foofactors-a4a99ff"  \
     ##   --library="D:/R/R-3.4.1/library" --install-tests
 
     ## 
@@ -117,7 +121,7 @@ factor1<- class(factor(c("apple", "pear", "banana")))
 factor2<- class(factor(c("apple", "pear", "apple")))
 ```
 
-From above code, both "factor1" and "factor2" are defined as the factor. However, "factor1" should be a character because of the number of unique value equal to the length.
+From above code, both "factor1" and "factor2" are defined as the factor by using `class()`. However, "factor1" should be a character because of the number of unique value equal to the length.
 
 Using `detect_factor_be_character` function can easily find "character", "factor" and neither "character" or "factor."
 
@@ -153,7 +157,7 @@ From the code above, we could find that the orginal order levels is 1, 2, 3. Usi
 
 ### Sets levels to the order in which they appear in the data: order\_appeared
 
-Here I create a function which set the order following appearance level. and this function will only return unique input levels,
+Here I create a function which set the order following appearance level. This function will only return unique input levels,
 
 ``` r
 factor(c("pear","apple","banana","banana","apple"))
