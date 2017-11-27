@@ -10,9 +10,13 @@ test_that("freq_out function creates a frequency table", {
   factor2_list <- list(x = factor(c("a", "b", "c")), n = as.integer(c("5", "1", "3")))
   factor2_dataframe <- as.data.frame(factor2_list)
   expect_equal(freq_out(factor2), factor2_dataframe)
-  #expectation for failure.
+})
+
+test_that("Empty input",{
   ### Empty input
   expect_error(freq_out())
+})
+test_that("expectation for failure",{
   ## frequency factor1 is not the same as factor2_dataframe
   expect_error(freq_out(factor1)==factor2_dataframe)
 })

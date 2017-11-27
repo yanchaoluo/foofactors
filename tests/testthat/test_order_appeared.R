@@ -5,6 +5,13 @@ test_that("Follow the order of appearance level",{
   order1 <- c("pear","apple","banana","banana","apple")
   order_by_hand <- c("pear","apple","banana")
   expect_identical(levels(order_appeared(order1)),order_by_hand )
+})
+
+test_that("input is not character or factor",{
+  expect_error(order_appeared(1),"This input is not character or factor")
+})
+
+test_that("expectation for failure for factor",{
   #expectation for failure.
   order2 <- c("apple","pear","banana","banana","apple")
   expect_error(level(order_appeared(order2))==order_by_hand)
