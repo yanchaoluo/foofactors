@@ -95,7 +95,7 @@ detect_factor_be_character(factor3)
 ```
 The R code above will show two types of error when you use "detect_factor_be_character."
 
-### Reorder level of factor: 
+### Reorder level of factor: `reorder_new`
 
 This function is very similar with `fct_rev` function.
 and `reorder_new` fuction is using desc() in dplyr to reorder factor levels in descending order.
@@ -106,7 +106,7 @@ reorder_new(factor(c("1","2","3")))
 
 From the code above, we could find that the orginal order levels is 1, 2, 3. Using the `reorder_new` function we get decending order 3, 2, 1.
 
-### Sets levels to the order in which they appear in the data: order_appeared
+### Sets levels to the order in which they appear in the data: `order_appeared`
 
 Here I create a function which set the order following appearance level. and this function will only return unique input levels,
 
