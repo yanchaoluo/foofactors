@@ -8,6 +8,9 @@
 #' reorder_new(factor(c("1","2","3")))
 #' @export
 reorder_new <- function(x) {
+  if(!(is.factor(x)||is.character(x))){
+    stop("This input is not character or factor")
+  }
   result<-stats::reorder(x, dplyr::desc(x))
   return(result)
 }

@@ -8,7 +8,7 @@
 #' @examples order_appeared (c("pear","apple","banana","banana","apple"))
 #' @export
 order_appeared <- function(x){
-  if(class(x)!="factor"&&class(x) != "character"){
+  if(!(is.factor(x)||is.character(x))){
     stop("This input is not character or factor")
   }
   unique_order<-as.character(unique(x))

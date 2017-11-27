@@ -14,7 +14,7 @@ test_that("two or more input",{
 
 
 test_that("expectation error", {
-  ## levels of oreder should not equal
-  expect_error(levels(reorder_new(factor1)), levels(factor1))
+  expect_error(levels(reorder_new(1)),
+               "This input is not character or factor")
 
 })
