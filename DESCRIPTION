@@ -20,3 +20,5 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Imports: dplyr, devtools
+URL: https://github.com/yanchaoluo/foofactors
+BugReports: https://github.com/yanchaoluo/foofactors/issues
